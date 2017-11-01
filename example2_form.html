@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>example 2</title>
+</head>
+<body>
+	<h1>Example 2 - 계산기</h1>
+		<form method="post" action="php/example2.php">
+			<fieldset>
+				<legend>계산기</legend>
+				<input type="text" name="val01" placeholder="숫자" required="true" />
+				<select class="operator" name="operator">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+				<input type="text" name="val02" placeholder="숫자" required="true" />
+				<input type="submit" value="계산">
+				<input type="reset" value="초기화">
+			</fieldset>
+		</form>
+</body>
+</html>
