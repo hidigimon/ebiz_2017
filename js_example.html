@@ -1,0 +1,50 @@
+<html>
+<!-- jQuery & DOM example -->
+<head>
+	<title>Javascript Example</title>
+	<style type="text/css">
+		h1 {	font-size: 100px;	font-family: arial;	}
+		img {	width: :300px;	}
+		p#myLine {	color: red;}
+	</style>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+	  <script type="text/javascript">
+function doMoreInitializing() {
+  console.log("more!");
+}
+
+function changeToBar() {
+  $("#mainImage").attr("src", "http://www.wikiality.com/file/2016/11/bears1.jpg");
+}
+$(document).ready(function() {
+
+  console.log("Hello world!");
+  doMoreInitializing();
+  $("#catButton").on('click', function() {
+    $("#mainImage").attr("src", "http://www.catster.com/wp-content/uploads/2017/06/small-kitten-meowing.jpg");
+    console.log('meow!');
+  });
+  $("#dogButton").on('click', function() {
+    $("#mainImage").attr("src", "https://www.runnersworld.com/sites/runnersworld.com/files/styles/listicle_slide_custom_user_phone_1x/public/beagle2.jpg?itok=lv5EvG-2");
+    console.log('bark!');
+  });
+  $("#bearButton").click(changeToBar);
+});
+
+  </script>
+	<h1>My Heading</h1>
+	<h2>My Sub-Heading</h2>
+	<img id="mainImage" src="https://cvimg1.cardekho.com/p/300x150/in/eicher/pro-1110/eicher-pro-1110.jpg">
+	<p>Hello</p>
+	<h2>My Other Sub-heading</h2>
+	<p id="myLine">a new line</p>
+	<p>another one</p>
+	<button id="catButton">Cat</button>
+	<button id="dogButton">Dog</button>
+	<button id="bearButton">Bear</button>
+</body>
+</html>

@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Example 3 - 회원가입</title>
-</head>
-<body>
+<?php 
+	$servername = 'localhost';
+	$username = 'root';
+	$password = 'root';
+	$conn = mysqli_connect($servername, $username, $password);
 
-	<form action="insert.php" method="post">
-		<label for="username">이름 : </label>
-		<input type="text" name="username" placeholder="이름을 입력하세요." required="true" />
-		</br>
-		<label for="email">이메일 : </label>
-		<input type="email" name="email" placeholder="이메일을 입력하세요." required="true" />
+	// if(!$conn) {
+	// 	die("Connection failed: ".mysqli_connect_error());
+	// }
+	// echo "Connected successfully";
 
-	</form>
+		if(!$db_status) {
+		error("DB_ERROR");
+		exit;
+	}
+	$query="INSERT INTO userinfo VALUES('$_POST['username']'.'$_POST['email']')";
+	$result= mysql_query($query);
+	if(!$result){
+		print "입력되었습니다.</br>";
+	} else {
+		print "입력되지 않았습니다. </br>";
+	}
 
-</body>
-</html>
+?>
