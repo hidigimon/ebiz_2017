@@ -2,10 +2,21 @@
 <!-- jQuery & DOM example -->
 <head>
 	<title>Javascript Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0">
 	<style type="text/css">
 		h1 {	font-size: 100px;	font-family: arial;	}
 		img {	width: :300px;	}
 		p#myLine {	color: red;}
+		/*google maps*/
+		#map {
+			height : 100%;
+		}
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
 	</style>
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js">
@@ -17,8 +28,8 @@ function doMoreInitializing() {
   console.log("more!");
 }
 
-function changeToBar() {
-  $("#mainImage").attr("src", "http://www.wikiality.com/file/2016/11/bears1.jpg");
+function changeToBear() {
+  $("#mainImage").attr("src", "http://dreamstop.com/wp-content/uploads/2015/03/bear-dream.jpg");
 }
 $(document).ready(function() {
 
@@ -32,7 +43,7 @@ $(document).ready(function() {
     $("#mainImage").attr("src", "https://www.runnersworld.com/sites/runnersworld.com/files/styles/listicle_slide_custom_user_phone_1x/public/beagle2.jpg?itok=lv5EvG-2");
     console.log('bark!');
   });
-  $("#bearButton").click(changeToBar);
+  $("#bearButton").click(changeToBear);
 });
 
   </script>
@@ -46,5 +57,18 @@ $(document).ready(function() {
 	<button id="catButton">Cat</button>
 	<button id="dogButton">Dog</button>
 	<button id="bearButton">Bear</button>
+
+	<div id="map"></div>
+	<script>
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center : {lat: 37.59, lng: 127.027},
+				zoom : 14
+			});
+		}
+	</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG4_LhlcN-nXQlvlBOzfTPNq0DBe0IkMU&callback=initMap"
+    async defer></script>
 </body>
 </html>
